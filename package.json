@@ -1,0 +1,20 @@
+{
+  "name": "2024-05-10_fed2_semester-poject-2_emilie-herrera-thomsen",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehteht487/2024-05-10_FED2_Semester-Poject-2_Emilie-Herrera-Thomsen.git"
+  },
+  "keywords": [],
+  "author": "Emilie Herrera Thomsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehteht487/2024-05-10_FED2_Semester-Poject-2_Emilie-Herrera-Thomsen/issues"
+  },
+  "homepage": "https://github.com/ehteht487/2024-05-10_FED2_Semester-Poject-2_Emilie-Herrera-Thomsen#readme"
+}
