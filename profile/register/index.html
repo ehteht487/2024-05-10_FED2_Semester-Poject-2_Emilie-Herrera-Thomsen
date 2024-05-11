@@ -57,7 +57,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">                
-                <form id="registerForm" method="post" action="/auth/register">
+                <form id="registerForm">
                     <div class="form-group mb-3">
                         <label for="Username">Username</label>
                         <input class="form-controll" type="text" name="name" required pattern="^[\w]+$" title="Username can only be upper and lowercase letters. Numbers and underscore are also allowed">
@@ -70,28 +70,7 @@
                         <label for="Password">Password</label>
                         <input class="form-controll" type="password" name="password" required minlength="8">
                     </div>
-                    <div class="form-group mb-3">
-                        <label for="Bio">Bio</label>
-                        <input class="form-controll" type="text" name="bio" maxlength="160">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="Avatar">Avatar</label>
-                        <label for="avatarUrl">avatarUrl</label>
-                        <input class="form-controll" type="url" name="avatarUrl" title="This must be a valid and accessible URL">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="Alttext">Alttext</label>
-                        <input class="form-controll" type="text" name="altText" maxlength="120">
-                    </div>  
-                    <div class="form-group mb-3">
-                        <label for="Banner">Banner</label>
-                        <label for="BannerUrl">BannerUrl</label>
-                        <input class="form-controll" type="url" name="bannerUrl" title="This must be a valid and accessible URL">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="BannerAlttext">BannerAlttext</label>
-                        <input class="form-controll" type="text" name="bannerAltText" maxlength="120">
-                    </div> 
+                    
                     <button>Register</button>
                 </form>
             </div>
