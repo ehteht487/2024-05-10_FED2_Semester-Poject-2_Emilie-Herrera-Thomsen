@@ -1,5 +1,6 @@
 import { key } from "./login.mjs";
 import { API_HOST_URL } from "../constants.mjs";
+import * as storage from "../../storage/index.mjs";
 
 const action = "auth/create-api-key";
 const method = "post";
@@ -17,8 +18,14 @@ export async function createAPIKey() {
         });
 
         const responseData = await response.json();
-        return responseData.data.key;     
+                
+        storage.save("apiKey", responseData.data.key);
 }
+
+export const apiKey = storage.load("apiKey")
+console.log(apiKey)
+
+
 
 
 
