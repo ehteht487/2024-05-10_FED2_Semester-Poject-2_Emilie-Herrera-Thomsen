@@ -6,48 +6,97 @@
     <title>Document</title>
     <link rel="stylesheet" href="/dist/css/styles.css">
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="/src/js/handlers/register.mjs"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./profile/register/">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./profile/register/">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+  </header>
+  <main class="flex-grow-1">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">                
+                <form id="registerForm" method="post" action="/auth/register">
+                    <div class="form-group mb-3">
+                        <label for="Username">Username</label>
+                        <input class="form-controll" type="text" name="name" required pattern="^[\w]+$" title="Username can only be upper and lowercase letters. Numbers and underscore are also allowed">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Email">Email</label>
+                        <input class="form-controll" type="email" name="email" required pattern="^[\w\-.]+@(stud.)?noroff.no$" title="You can only use domains that look like this: youremail@stud.noroff.no">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Password">Password</label>
+                        <input class="form-controll" type="password" name="password" required minlength="8">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Bio">Bio</label>
+                        <input class="form-controll" type="text" name="bio" maxlength="160">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Avatar">Avatar</label>
+                        <label for="avatarUrl">avatarUrl</label>
+                        <input class="form-controll" type="url" name="avatarUrl" title="This must be a valid and accessible URL">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Alttext">Alttext</label>
+                        <input class="form-controll" type="text" name="altText" maxlength="120">
+                    </div>  
+                    <div class="form-group mb-3">
+                        <label for="Banner">Banner</label>
+                        <label for="BannerUrl">BannerUrl</label>
+                        <input class="form-controll" type="url" name="bannerUrl" title="This must be a valid and accessible URL">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="BannerAlttext">BannerAlttext</label>
+                        <input class="form-controll" type="text" name="bannerAltText" maxlength="120">
+                    </div> 
+                    <button>Register</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </nav>
-<button class="btn btn-success">Hello</button>
+  </main>    
+</body>
+</html>
