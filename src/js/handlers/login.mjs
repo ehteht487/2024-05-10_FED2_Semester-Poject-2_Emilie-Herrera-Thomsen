@@ -1,5 +1,6 @@
 import { login } from "../api/auth/login.mjs";
 
+
 export function setLoginFormListener() {
     const form = document.querySelector("#loginForm");
 
@@ -10,6 +11,7 @@ export function setLoginFormListener() {
         const profile = Object.fromEntries(formData.entries())
 
         login(profile)
+        
         
         });
 };

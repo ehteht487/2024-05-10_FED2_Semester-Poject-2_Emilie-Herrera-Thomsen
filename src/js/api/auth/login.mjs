@@ -1,4 +1,5 @@
 import { API_HOST_URL } from "../constants.mjs";
+import { createAPIKey } from "./apiKey.mjs";
 import * as storage from "../../storage/index.mjs";
 
 const action = "auth/login";
@@ -17,9 +18,15 @@ export async function login(profile) {
   });
 
   const result = await response.json();
-  console.log(result);
+  
 
   storage.save("token", result.data.accessToken);
   storage.save("profile", result);
   alert("You have successfully logged in");
 }
+
+export const key = storage.load("token")
+
+createAPIKey()
+
+
